@@ -18,15 +18,13 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
-    { name: "Portfolio", path: "/portfolio" },
     { name: "Contact", path: "/contact" },
   ];
 
   const aiLinks = [
-    { name: "AI Tutorial", path: "/ai/tutorial" },
-    { name: "AI Exam Test", path: "/ai/exam" },
     { name: "Description", path: "/ai/description" },
     { name: "Register for Exam", path: "/ai/register" },
+    { name: "AI Tutorial", path: "/ai/tutorial" },
   ];
 
   return (
@@ -87,6 +85,20 @@ const Navbar = () => {
               )}
             </NavLink>
           ))}
+
+          {/* PORTFOLIO EXTERNAL LINK */}
+          <a
+            href="https://companyindustryportfolio.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-sm transition ${
+              scrolled
+                ? "text-slate-800 hover:text-indigo-600"
+                : "text-white hover:text-indigo-300"
+            }`}
+          >
+            Portfolio
+          </a>
 
           {/* AI DROPDOWN */}
           <div
@@ -159,6 +171,16 @@ const Navbar = () => {
                   {link.name}
                 </NavLink>
               ))}
+
+              {/* PORTFOLIO MOBILE */}
+              <a
+                href="https://companyindustryportfolio.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-900 hover:text-indigo-600"
+              >
+                Portfolio
+              </a>
 
               {aiLinks.map((link) => (
                 <NavLink

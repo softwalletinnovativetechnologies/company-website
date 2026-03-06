@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import ClientsSlider from "../components/ClientsSlider";
 import TimelineHanging from "../components/TimelineHanging";
 import OctagonCard from "../components/OctagonCard";
+import { useNavigate } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },
@@ -13,6 +14,7 @@ const fadeUp = {
 };
 
 const About = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative text-white overflow-hidden">
       {/* BACKGROUND */}
@@ -124,14 +126,19 @@ const About = () => {
             into scalable digital products and innovative software solutions.
           </p>
 
-          <button
+          <motion.button
+            onClick={() => navigate("/contact")}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
             className="px-10 py-4 rounded-full font-semibold
-          bg-gradient-to-r from-cyan-400 to-blue-500
-          shadow-[0_0_30px_rgba(0,255,255,0.6)]
-          hover:scale-110 transition"
+  bg-gradient-to-r from-cyan-400 to-blue-300
+  text-white
+  shadow-[0_0_25px_rgba(0,255,255,0.6)]
+  hover:shadow-[0_0_50px_rgba(0,255,255,0.9)]
+  transition duration-300"
           >
             Get in Touch
-          </button>
+          </motion.button>
         </motion.div>
       </section>
 

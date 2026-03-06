@@ -1,5 +1,6 @@
 import {
   FaFacebookF,
+  FaEnvelope,
   FaInstagram,
   FaLinkedinIn,
   FaWhatsapp,
@@ -24,6 +25,9 @@ const Footer = () => {
 
           {/* social icons */}
           <div className="flex gap-3 text-sm">
+            <SocialIcon link="mailto:info@softwalletinnovativetechnologies.cloud">
+              <FaEnvelope />
+            </SocialIcon>
             <SocialIcon link="https://www.facebook.com/profile.php?id=61585776410900">
               <FaFacebookF />
             </SocialIcon>
@@ -36,7 +40,7 @@ const Footer = () => {
               <FaLinkedinIn />
             </SocialIcon>
 
-            <SocialIcon link="https://wa.me/919596393658">
+            <SocialIcon link="https://wa.me/917599741491">
               <FaWhatsapp />
             </SocialIcon>
           </div>

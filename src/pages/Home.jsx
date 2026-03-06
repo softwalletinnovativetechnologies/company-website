@@ -6,6 +6,8 @@ import TimelineItem from "../components/TimelineItem";
 import TestimonialCard from "../components/TestimonialCard";
 import HexIndustry from "../components/HexIndustry";
 import { useNavigate } from "react-router-dom";
+
+import { useState } from "react";
 const services = [
   {
     title: "Web Development",
@@ -93,6 +95,8 @@ const Home = () => {
       behavior: "smooth",
     });
   };
+
+  const [openForm, setOpenForm] = useState(false);
   return (
     <div className="relative overflow-hidden">
       {/* BACKGROUND */}
@@ -123,10 +127,6 @@ const Home = () => {
               Engineering smart software solutions that power innovation,
               accelerate growth, and shape the digital future.{" "}
             </p>
-
-            <button className="mt-8 px-8 py-3 border border-white text-white hover:bg-white hover:text-black transition">
-              Learn More
-            </button>
           </motion.div>
 
           {/* HEXAGON GRID */}
@@ -351,9 +351,10 @@ bg-clip-text text-transparent"
             <motion.button
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => setOpenForm(true)}
               className="px-10 py-4 rounded-full font-semibold
 bg-gradient-to-r from-cyan-400 to-blue-500
-text-white
+text-black
 shadow-[0_0_25px_rgba(0,255,255,0.6)]
 hover:shadow-[0_0_50px_rgba(0,255,255,0.9)]
 transition duration-300"
@@ -362,7 +363,65 @@ transition duration-300"
             </motion.button>
           </motion.div>
         </section>
+        {openForm && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="bg-white rounded-3xl p-8 w-[90%] max-w-md shadow-2xl"
+            >
+              <h2 className="text-2xl font-bold mb-6 text-slate-800">
+                Free Consultation
+              </h2>
 
+              <form
+                action="https://formsubmit.co/info@softwalletinnovativetechnologies.cloud"
+                method="POST"
+                className="space-y-4"
+              >
+                <input type="hidden" name="_captcha" value="false" />
+
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                  className="w-full border p-3 rounded-lg"
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                  className="w-full border p-3 rounded-lg"
+                />
+
+                <textarea
+                  name="query"
+                  placeholder="Your Query"
+                  rows="4"
+                  required
+                  className="w-full border p-3 rounded-lg text-black"
+                />
+
+                <button
+                  type="submit"
+                  className="w-full py-3 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-semibold"
+                >
+                  Send Request
+                </button>
+              </form>
+
+              <button
+                onClick={() => setOpenForm(false)}
+                className="mt-4 text-red-500 text-sm"
+              >
+                Close
+              </button>
+            </motion.div>
+          </div>
+        )}
         <ClientsSlider />
       </div>
     </div>

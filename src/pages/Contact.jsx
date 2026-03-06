@@ -72,7 +72,7 @@ const Contact = () => {
           <ContactCard
             icon="📍"
             title="Our Location"
-            text="Kupwara, Jammu & Kashmir, India"
+            text="Srinagar, Jammu & Kashmir, India"
           />
         </div>
 
@@ -159,11 +159,13 @@ const Contact = () => {
             shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
           >
             <iframe
-              src="https://maps.google.com/maps?q=kupwara%20kashmir&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              src="https://www.google.com/maps?q=Srinagar%20Jammu%20and%20Kashmir&output=embed"
               width="100%"
               height="100%"
-              className="min-h-[450px]"
+              style={{ border: 0 }}
+              allowFullScreen=""
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </motion.div>
         </div>
