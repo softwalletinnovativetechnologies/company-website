@@ -88,7 +88,7 @@ const Navbar = () => {
 
           {/* PORTFOLIO EXTERNAL LINK */}
           <a
-            href="https://companyindustryportfolio.vercel.app/"
+            href="https://companyindustryportfolio-phi.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className={`text-sm transition ${
@@ -174,7 +174,7 @@ const Navbar = () => {
 
               {/* PORTFOLIO MOBILE */}
               <a
-                href="https://companyindustryportfolio.vercel.app/"
+                href="https://companyindustryportfolio-phi.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-900 hover:text-indigo-600"
